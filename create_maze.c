@@ -58,7 +58,7 @@ size_t get_char_count(char *line)
 void plot_grid_points(char **maze, double_s *play, int_s *win, size_t cur_char,
 		      size_t maze_line, char *line)
 {
-	static int win_found = 0;
+	static int win_found;
 
 	if (line[cur_char] == 'p')
 	{
@@ -89,9 +89,10 @@ void plot_grid_points(char **maze, double_s *play, int_s *win, size_t cur_char,
  * @file_string: Path to the file containing the representation of the map
  * @play: Player x/y position
  * @win: The x/y cooridinate of the winning space
+ * @map_h: The height of the 2D array representing the play space
  * Return: char ** to a representation of the map, NULL if it fails
  **/
-char **create_map(char *file_string, double_s *play, int_s *win)
+char **create_map(char *file_string, double_s *play, int_s *win, size_t *map_h)
 {
 	FILE *maze_file;
 	char **maze, *line = NULL;
@@ -100,6 +101,7 @@ char **create_map(char *file_string, double_s *play, int_s *win)
 
 	win_spot = maze_line = 0;
 	line_count = get_line_count(file_string);
+	*map_h = line_count;
 	if (line_count == 0)
 		return (NULL);
 	maze = malloc(sizeof(int *) * line_count);
