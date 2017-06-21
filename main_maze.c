@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 {
 	SDL_Instance instance;
 	char **map;
+	size_t map_h = 0;
 	int win_value = 0;
 	int_s win = {0, 0};
 	double_s play = {2, 2};
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (1);
-	map = create_map(argv[1], &play, &win);
+	map = create_map(argv[1], &play, &win, &map_h);
 	if (map == NULL)
 	{
 		printf("Unable to create map\n");
@@ -41,8 +42,6 @@ int main(int argc, char *argv[])
 	}
 	if (win_value)
 		print_win();
-	SDL_DestroyRenderer(instance.renderer);
-	SDL_DestroyWindow(instance.window);
-	SDL_Quit();
+	free_memory(instance, map, map_h);
 	return (0);
 }
