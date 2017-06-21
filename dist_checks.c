@@ -46,7 +46,7 @@ void check_ray_dir(int_s *step, double_s *dist_side, double_s ray_pos,
  * @ray_pos: X/Y coordinate of the ray
  * Return: Distance from player to the wall
  **/
- double get_wall_dist(char **map, double_s *dist_side, int_s *coord,
+double get_wall_dist(char **map, double_s *dist_side, int_s *coord,
 		      int_s *step, double_s *dist_del, int *hit_side,
 		      double_s *ray_dir, double_s *ray_pos)
 {
