@@ -21,11 +21,11 @@ void free_memory(SDL_Instance instance, char **map, size_t map_h)
  **/
 void free_map(char **map, size_t map_h)
 {
-	while (map_h > 0)
+	size_t i = 0;
+
+	while (i < map_h)
 	{
-		free(map[map_h]);
-		map_h--;
+		free(map[i]);
+		i++;
 	}
-	free(map[0]);
-	free(map);
 }
