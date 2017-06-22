@@ -63,6 +63,12 @@ typedef struct keys
 	int left;
 } keys;
 
+typedef struct level
+{
+	char **map;
+	size_t height;
+} level;
+
 /**
  * File - init_instance.c
  * Initializes instances for windo and renderer
