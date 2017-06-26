@@ -46,7 +46,9 @@ Example of a maze file:
 
 <img src="imgs/level_1.png" alt="Map File" width=50% height=50%>
 
-**Map Character in Game Meanings**
+In the image above the player starts 2 spaces in from the top left corner, and the end goal is placed in the bottom left most space that isn't a wall. There are five columns that are mostly blue, but have green, yellow, and white wall chunks in them.
+
+**Map File Characters' in Game Meanings**
 - **0**: Floor/walkable space
 - **1**: Red Wall
 - **2**: Green Wall
@@ -55,5 +57,8 @@ Example of a maze file:
 - **w**: End goal
 - **p**: Player start position
 - All other characters will be defaulted to white walls
+
+### Authors
+**Corbin Coleman** \<corbincole@gmail.com> <a href="https://twitter.com/CorbinMColeman">@CorbinMColeman</a>
 
 ## This project is still a work in progress more detail on the project will be available in the future
