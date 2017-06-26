@@ -9,9 +9,7 @@
 void free_memory(SDL_Instance instance, char **map, size_t map_h)
 {
 	free_map(map, map_h);
-	SDL_DestroyRenderer(instance.renderer);
-	SDL_DestroyWindow(instance.window);
-	SDL_Quit();
+	close_SDL(instance);
 }
 
 /**
@@ -28,4 +26,15 @@ void free_map(char **map, size_t map_h)
 		free(map[i]);
 		i++;
 	}
+}
+
+/**
+ * close_SDL - closes the SDL window & renderer
+ * @instance: Struct containing window & renderer
+ **/
+void close_SDL(SDL_Instance instance)
+{
+	SDL_DestroyRenderer(instance.renderer);
+	SDL_DestroyWindow(instance.window);
+	SDL_Quit();
 }
