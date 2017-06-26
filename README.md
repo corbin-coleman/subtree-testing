@@ -24,8 +24,9 @@ Or you can run with multiple maps at once:
 Some basic maps are provided in this repo in the maps/ directory, but you can make your own maps to play as well.
 
 After running `./maze maps/level_1` you should see a screen like this:
-
+<div widht=100%>
 <img src="imgs/initial_load.png" width=50% height=50% alt="Screenshot of Red Game Screen" align="middle">
+</div>
 
 If you're using the provided maps it'll just be a red screen, but that's not all. If you rotate with the arrow keys to the right you'll see the rest of the maze:
 
