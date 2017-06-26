@@ -37,6 +37,6 @@ Currently the player's starting position and the end goal position of the maze c
 
 When you have found the end of the maze you will either move, rather abruptly, to the next maze or the game will exit and you will be greeted with a win message in your console.
 
-<img src="imgs/win_screen.png" alt="Win Screenshot">
+<img src="imgs/win_screen.png" alt="Win Screenshot" width=50% height=50%>
 
 ## This project is still a work in progress more detail on the project will be available in the future
