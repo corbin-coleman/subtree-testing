@@ -39,4 +39,21 @@ When you have found the end of the maze you will either move, rather abruptly, t
 
 <img src="imgs/win_screen.png" alt="Win Screenshot" width=50% height=50%>
 
+## Creating a Maze
+The files in the maps/ directory provide examples of the file format for a maze to work with this game. The different characters in the file represent different colored walls, the floor, the player position, or the position of the end goal.
+
+Example of a maze file:
+
+<img src="imgs/level_1.png" alt="Map File" width=50% height=50%>
+
+**Map Character in Game Meanings**
+- **0**: Floor/walkable space
+- **1**: Red Wall
+- **2**: Green Wall
+- **3**: Blue Wall
+- **4**: Yellow Wall
+- **w**: End goal
+- **p**: Player start position
+- All other characters will be defaulted to white walls
+
 ## This project is still a work in progress more detail on the project will be available in the future
