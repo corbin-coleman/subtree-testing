@@ -3,7 +3,6 @@ This project is a first person '3D' maze game. Similar to Wolfenstein or Doom, m
 
 ## Play the Game
 First step is to clone the repo: ```git clone https://github.com/corbin-coleman/maze.git```
-
-compile with `gcc -Wall -Werror -Wextra -pedantic -I/usr/local/include/SDL2 -D_THREAD_SAFE -L/usr/local/lib -lSDL2`
+Compile all .c files in the maze directory:  ```gcc -Wall -Werror -Wextra -pedantic -I/usr/local/include/SDL2 -D_THREAD_SAFE -L/usr/local/lib -lSDL2```
 
 ## This project is still a work in progress more detail on the project will be available in the future
