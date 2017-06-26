@@ -54,12 +54,11 @@ size_t get_char_count(char *line)
  * @cur_char: The current character in the line being read
  * @maze_line: The line in the maze currently being created
  * @line: The line being read from the file
+ * @found_win: Was the win square in the maze found
  **/
 void plot_grid_points(char **maze, double_s *play, int_s *win, size_t cur_char,
-		      size_t maze_line, char *line)
+		      size_t maze_line, char *line, int *found_win)
 {
-	static int win_found;
-
 	if (line[cur_char] == 'p')
 	{
 		play->y = cur_char;
@@ -68,14 +67,14 @@ void plot_grid_points(char **maze, double_s *play, int_s *win, size_t cur_char,
 	}
 	else if (line[cur_char] == 'w')
 	{
-		win_found = 1;
+		*found_win = 1;
 		win->y = cur_char;
 		win->x = maze_line;
 		maze[maze_line][cur_char] = '0';
 	}
 	else
 	{
-		if (line[cur_char] == '0' && win_found == 0)
+		if (line[cur_char] == '0' && *found_win == 0)
 		{
 			win->y = cur_char;
 			win->x = maze_line;
@@ -97,9 +96,11 @@ char **create_map(char *file_string, double_s *play, int_s *win, size_t *map_h)
 	FILE *maze_file;
 	char **maze, *line = NULL;
 	ssize_t read = 0;
-	size_t line_count, maze_line, char_count, cur_char, bufsize, win_spot;
+	size_t line_count, maze_line, char_count, cur_char, bufsize;
+	int found_win = 0;
 
-	win_spot = maze_line = 0;
+	found_win = 0;
+	maze_line = 0;
 	line_count = get_line_count(file_string);
 	*map_h = line_count;
 	if (line_count == 0)
@@ -119,7 +120,7 @@ char **create_map(char *file_string, double_s *play, int_s *win, size_t *map_h)
 			return (NULL);
 		for (cur_char = 0; cur_char < char_count; cur_char++)
 		{
-			plot_grid_points(maze, play, win, cur_char, maze_line, line);
+			plot_grid_points(maze, play, win, cur_char, maze_line, line, &found_win);
 		}
 		maze_line++;
 		read = getline(&line, &bufsize, maze_file);
