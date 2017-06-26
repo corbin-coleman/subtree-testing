@@ -59,6 +59,6 @@ In the image above the player starts 2 spaces in from the top left corner, and t
 - All other characters will be defaulted to white walls
 
 ### Authors
-**Corbin Coleman** \<corbincole@gmail.com> <a href="https://twitter.com/CorbinMColeman">@CorbinMColeman</a>
+**Corbin Coleman** \<corbincol@gmail.com> <a href="https://twitter.com/CorbinMColeman">@CorbinMColeman</a>
 
 ## This project is still a work in progress more detail on the project will be available in the future
