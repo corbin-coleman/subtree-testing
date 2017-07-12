@@ -1,5 +1,17 @@
 # The Maze
-This project is a first person '3D' maze game. Similar to Wolfenstein or Doom, minus enemies and weapons, although they may be added later. It was made using SDL2 and C. It runs on Mac OS X and Debian/Ubuntu. The game uses the technique raycasting to create the apparent 3D nature of the maze.
+This project is a first person '3D' maze game. Similar to Wolfenstein or Doom, minus enemies and weapons, although they may be added later. It was made using SDL2 and C. It runs on Mac OS X and Linux/Ubuntu. The game uses the technique raycasting to create the apparent 3D nature of the maze.
+
+## Requirements to Play
+- Mac OS X or Linux/Ubuntu
+- SDL2
+
+If you don't have SDL2 installed download the installation script <a href="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/graphics_programming/install_SDL2.sh">here</a>. Then find the script and run it in your terminal:
+```
+p1-3:Downloads 67$ ls
+install_SDL2.sh
+p1-3:Downloads 67$ chmod 755 install_SDL2.sh
+p1-3:Downloads 67$ sudo ./install_SDL2.sh
+```
 
 ## Start the Game
 First step is to clone the repo:
@@ -9,7 +21,11 @@ git clone https://github.com/corbin-coleman/maze.git
 
 Compile all .c files in the maze directory:
 ```
-gcc -Wall -Werror -Wextra -pedantic -I/usr/local/include/SDL2 -D_THREAD_SAFE -L/usr/local/lib -lSDL2 *.c -o maze
+gcc -Wall -Werror -Wextra -pedantic -I/usr/local/include/SDL2 -L/usr/local/lib -lSDL2 *.c -o maze
+```
+Alternatively, just use the make command:
+```
+make
 ```
 
 Run the maze with the map you'd like to play:
