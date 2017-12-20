@@ -24,7 +24,6 @@ void draw_background(SDL_Instance instance)
 {
 	size_t x;
 
-
 	for (x = 0; x <= SCREEN_WIDTH; x++)
 	{
 		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
@@ -33,7 +32,6 @@ void draw_background(SDL_Instance instance)
 		SDL_RenderDrawLine(instance.renderer, x, SCREEN_HEIGHT / 2, x,
 				   SCREEN_HEIGHT);
 	}
-
 }
 
 /**
@@ -127,4 +125,18 @@ void choose_color(SDL_Instance instance, char **map, int_s coord, int hit_side)
 				SDL_SetRenderDrawColor(instance.renderer, 0x88, 0x88, 0x88, 0xFF);
 			break;
 		}
+}
+
+void draw_next_screen(SDL_Instance instance)
+{
+	size_t x;
+
+	for (x = 0; x <= SCREEN_WIDTH; x++)
+	{
+		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
+		SDL_RenderDrawLine(instance.renderer, x, 0, x, SCREEN_HEIGHT / 2);
+		SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0xFF, 0xFF);
+		SDL_RenderDrawLine(instance.renderer, x, SCREEN_HEIGHT / 2, x,
+				   SCREEN_HEIGHT);
+	}
 }

@@ -84,3 +84,26 @@ int keyboard_events(keys *key_press)
 	}
 	return (0);
 }
+
+int next_level_events()
+{
+	SDL_Event event;
+
+	while (SDL_PollEvent(&event))
+	{
+		switch(event.type)
+		{
+		case SDL_KEYDOWN:
+			switch (event.key.keysym.sym)
+			{
+			case SDLK_SPACE:
+				return (1);
+			default:
+				break;
+			}
+		default:
+			break;
+		}
+	}
+	return (0);
+}

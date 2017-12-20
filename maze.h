@@ -89,6 +89,7 @@ int init_instance(SDL_Instance *);
 int keyboard_events(keys *);
 void check_key_release_events(SDL_Event, keys *);
 int check_key_press_events(SDL_Event, keys *);
+int next_level_events(void);
 
 /* Create the map for maze from file: create_maze.c */
 char **create_map(char *, double_s *, int_s *, size_t *);
@@ -105,6 +106,7 @@ void draw(SDL_Instance, char **, double_s, double_s, double_s);
 void draw_walls(char **, double_s, SDL_Instance, double_s, double_s);
 void choose_color(SDL_Instance, char **, int_s, int);
 void draw_background(SDL_Instance);
+void draw_next_screen(SDL_Instance);
 
 /* Handle player movement/rotation: movement.c */
 void rotate(double_s *, double_s *, int);
@@ -113,6 +115,7 @@ void movement(keys, double_s *, double_s *, double_s *, char **);
 /* Handle player winning: win.c */
 void print_win(void);
 int check_win(double_s, int_s, int *);
+int next_level(SDL_Instance, keys *);
 
 /* Check distance from player to wall: dist_checks.c */
 double get_wall_dist(char **, double_s *, int_s *, int_s *, double_s *, int *,
