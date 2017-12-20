@@ -33,3 +33,19 @@ int check_win(double_s play, int_s win, int *win_value)
 	}
 	return (0);
 }
+
+int next_level(SDL_Instance instance, keys *key_press)
+{
+	while(1)
+	{
+		key_press->up = 0;
+		key_press->down = 0;
+		key_press->left = 0;
+		key_press->right = 0;
+		if (next_level_events())
+			break;
+		SDL_RenderPresent(instance.renderer);
+		draw_next_screen(instance);
+	}
+	return (1);
+}

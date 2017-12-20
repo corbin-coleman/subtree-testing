@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 			lvl++;
 			if (lvl == argc - 1)
 				break;
+			next_level(instance, &key_press);
 			win_value = 0;
 		}
 		draw(instance, levels[lvl].map, levels[lvl].play, levels[lvl].dir,
